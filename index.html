@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tic-Tac-Toe • Pastel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- Confetti -->
+  <canvas id="confetti"></canvas>
+
+  <!-- Landing (screen 1) -->
+  <section id="landing" class="screen" data-route="landing">
+    <div class="card">
+      <h1>Tic-Tac-Toe</h1>
+      <p class="sub">Pick your colours</p>
+
+      <div class="picker-row">
+        <div class="picker">
+          <label>Player X</label>
+          <input id="colorX" type="color" value="#8ecae6" />
+        </div>
+        <div class="picker">
+          <label>Player O</label>
+          <input id="colorO" type="color" value="#f7cad0" />
+        </div>
+      </div>
+
+      <!-- AI options -->
+      <div class="mode-row">
+        <label class="switch">
+          <input id="vsAi" type="checkbox" />
+          <span>Play vs AI</span>
+        </label>
+
+        <div id="aiOpts" class="ai-opts">
+          <label class="stack">
+            <span>Difficulty</span>
+            <select id="aiLevel">
+              <option value="easy">Easy</option>
+              <option value="medium" selected>Medium</option>
+              <option value="impossible">Impossible</option>
+            </select>
+          </label>
+
+          <fieldset class="side">
+            <legend>Your side</legend>
+            <label><input type="radio" name="side" value="X" checked> X</label>
+            <label><input type="radio" name="side" value="O"> O</label>
+          </fieldset>
+        </div>
+      </div>
+
+      <button id="startBtn" class="btn glass-pro">Start Game</button>
+    </div>
+  </section>
+
+  <!-- Game (screen 2) -->
+  <main id="game" class="screen hidden" data-route="game">
+    <header class="topbar">
+      <div class="space"></div>
+      <div class="scoreboard">
+        <span class="badge x">X: <strong id="scoreX">0</strong></span>
+        <span class="divider">•</span>
+        <span class="badge o">O: <strong id="scoreO">0</strong></span>
+        <span class="divider">•</span>
+        <span class="badge draws">Draws: <strong id="scoreD">0</strong></span>
+      </div>
+      <div class="actions">
+        <button id="newRoundBtn" class="btn glass-pro small">New Round</button>
+        <button id="landingBtn" class="btn glass-pro small">Back to Landing</button>
+      </div>
+    </header>
+
+    <section class="board-wrap">
+      <div class="status">Player <span id="who">X</span>’s turn</div>
+      <div id="board" class="board" role="grid" aria-label="Tic Tac Toe board">
+        <button class="cell" data-idx="0" aria-label="cell 1"></button>
+        <button class="cell" data-idx="1" aria-label="cell 2"></button>
+        <button class="cell" data-idx="2" aria-label="cell 3"></button>
+        <button class="cell" data-idx="3" aria-label="cell 4"></button>
+        <button class="cell" data-idx="4" aria-label="cell 5"></button>
+        <button class="cell" data-idx="5" aria-label="cell 6"></button>
+        <button class="cell" data-idx="6" aria-label="cell 7"></button>
+        <button class="cell" data-idx="7" aria-label="cell 8"></button>
+        <button class="cell" data-idx="8" aria-label="cell 9"></button>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/confetti.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
