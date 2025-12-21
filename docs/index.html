@@ -4,10 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Tic-Tac-Toe • Pastel</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="docs/assets/css/style.css" />
+
+  <!-- Make paths explicitly relative -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
+
 <body>
   <!-- Confetti -->
   <canvas id="confetti"></canvas>
@@ -91,7 +95,8 @@
     </section>
   </main>
 
-  <script src="docs/assets/js/confetti.js"></script>
-  <script src="docs/assets/js/app.js"></script>
+  <!-- Make paths explicitly relative + defer -->
+  <script defer src="./assets/js/confetti.js"></script>
+  <script defer src="./assets/js/app.js"></script>
 </body>
 </html>
