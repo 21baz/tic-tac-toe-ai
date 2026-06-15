@@ -176,7 +176,9 @@ function finishIfTerminal(){
     scoreOEl.textContent = scores.O;
     statusEl.textContent = `Player ${res.player} wins! 🎉`;
     playWinSound();
-    launchConfetti(colour);
+    if (typeof launchConfetti === "function") {
+       launchConfetti(colour);
+    }
     return true;
   }
   if (res.draw){
