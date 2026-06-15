@@ -68,7 +68,7 @@ const winAudio = new Audio('assets/sounds/win.mp3');
 winAudio.preload = 'auto';
 winAudio.volume = 0.9;
 function playWinSound() {
-  try { winAudio.currentTime = 0; winAudio.play(); } catch(e){ console.debug(e); }
+  try { const sound = winAudio.cloneNode(); sound.volume = winAudio.volume; sound.currentTime = 0; sound.play().catch(e => console.debug(e)); } catch(e){ console.debug(e); }
 }
 function unlockAudio() {
   const wasMuted = winAudio.muted;
